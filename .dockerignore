@@ -1,0 +1,16 @@
+**/bin
+**/obj
+**/node_modules
+**/dist
+**/App_Data
+**/test-results
+**/playwright-report
+**/.git
+**/.env
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.log
+tests/e2e
+
+**/wwwroot

@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #eef7f1;
+  --color-brand-100: #d5ebdc;
+  --color-brand-200: #acd6bc;
+  --color-brand-300: #77b994;
+  --color-brand-400: #41986c;
+  --color-brand-500: #247a52;
+  --color-brand-600: #185f40;
+  --color-brand-700: #124b34;
+  --color-brand-800: #0e3b2a;
+  --color-brand-900: #0b2e22;
+  --color-brand-950: #051a13;
+  --color-gold-50: #fbf8ec;
+  --color-gold-100: #f5ebc6;
+  --color-gold-200: #ead48a;
+  --color-gold-300: #ddb84e;
+  --color-gold-400: #c99a2b;
+  --color-gold-500: #a87a1c;
+  --color-gold-600: #8a5d16;
+  --color-ink-950: #122019;
+  --color-ink-900: #1b2d23;
+  --color-ink-700: #3f5147;
+  --color-ink-500: #68776e;
+  --color-paper: #f8f6ef;
+  --font-sans: "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: "Georgia", "Times New Roman", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100vh;
+    background: var(--color-paper);
+    color: var(--color-ink-950);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  button,
+  a,
+  input,
+  select,
+  textarea {
+    outline-color: var(--color-gold-400);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: var(--color-gold-200);
+    color: var(--color-ink-950);
+  }
+}
+
+@layer components {
+  .focus-ring {
+    @apply focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold-400;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-ink-500/20 bg-white px-4 py-3 text-sm text-ink-950 shadow-sm transition placeholder:text-ink-500/60 focus:border-brand-500 focus:ring-2 focus:ring-brand-500/15 focus:outline-none;
+  }
+
+  .field-label {
+    @apply mb-2 block text-sm font-semibold text-ink-900;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-ink-500/10 bg-white shadow-[0_18px_45px_-32px_rgba(15,55,39,0.5)];
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-bold tracking-[0.2em] text-brand-600 uppercase;
+  }
+
+  .page-title {
+    @apply font-display text-3xl leading-tight tracking-tight text-ink-950 sm:text-4xl;
+  }
+
+  .muted {
+    @apply text-sm leading-6 text-ink-500;
+  }
+
+  .print-only {
+    display: none;
+  }
+}
+
+@media print {
+  nav,
+  header,
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: white;
+  }
+
+  .print-only {
+    display: block;
+  }
+
+  .surface {
+    box-shadow: none;
+    border-color: #ddd;
+  }
+
+  @page {
+    margin: 16mm;
+  }
+}

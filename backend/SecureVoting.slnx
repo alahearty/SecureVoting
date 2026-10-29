@@ -1,0 +1,12 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SecureVoting.Api/SecureVoting.Api.csproj" />
+    <Project Path="src/SecureVoting.Application/SecureVoting.Application.csproj" />
+    <Project Path="src/SecureVoting.Domain/SecureVoting.Domain.csproj" />
+    <Project Path="src/SecureVoting.Infrastructure/SecureVoting.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SecureVoting.IntegrationTests/SecureVoting.IntegrationTests.csproj" />
+    <Project Path="tests/SecureVoting.UnitTests/SecureVoting.UnitTests.csproj" />
+  </Folder>
+</Solution>
